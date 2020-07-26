@@ -30,6 +30,7 @@ pipeline{
 		}
 		
 		stage ('Tomcat Deploy'){
+	        steps {
 		  
       sshagent(['423b5b58-c0a3-42aa-af6e-f0affe1bad0c']) {
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  centos@18.220.105.79:/usr/share/tomcat/webapps/" 
